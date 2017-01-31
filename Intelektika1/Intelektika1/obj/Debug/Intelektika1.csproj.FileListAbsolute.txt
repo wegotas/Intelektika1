@@ -7,3 +7,12 @@ C:\Users\Wegis\documents\visual studio 2015\Projects\Intelektika1\Intelektika1\o
 C:\Users\Wegis\documents\visual studio 2015\Projects\Intelektika1\Intelektika1\obj\Debug\Intelektika1.csproj.GenerateResource.Cache
 C:\Users\Wegis\documents\visual studio 2015\Projects\Intelektika1\Intelektika1\obj\Debug\Intelektika1.exe
 C:\Users\Wegis\documents\visual studio 2015\Projects\Intelektika1\Intelektika1\obj\Debug\Intelektika1.pdb
+C:\Users\Rolandas\Source\Repos\Intelektika1\Intelektika1\Intelektika1\bin\Debug\Intelektika1.exe.config
+C:\Users\Rolandas\Source\Repos\Intelektika1\Intelektika1\Intelektika1\obj\Debug\Intelektika1.exe
+C:\Users\Rolandas\Source\Repos\Intelektika1\Intelektika1\Intelektika1\obj\Debug\Intelektika1.pdb
+C:\Users\Rolandas\Source\Repos\Intelektika1\Intelektika1\Intelektika1\bin\Debug\Intelektika1.exe
+C:\Users\Rolandas\Source\Repos\Intelektika1\Intelektika1\Intelektika1\bin\Debug\Intelektika1.pdb
+C:\Users\Rolandas\Source\Repos\Intelektika1\Intelektika1\Intelektika1\obj\Debug\Intelektika1.csprojResolveAssemblyReference.cache
+C:\Users\Rolandas\Source\Repos\Intelektika1\Intelektika1\Intelektika1\obj\Debug\Intelektika1.Form1.resources
+C:\Users\Rolandas\Source\Repos\Intelektika1\Intelektika1\Intelektika1\obj\Debug\Intelektika1.Properties.Resources.resources
+C:\Users\Rolandas\Source\Repos\Intelektika1\Intelektika1\Intelektika1\obj\Debug\Intelektika1.csproj.GenerateResource.Cache

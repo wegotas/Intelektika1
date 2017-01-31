@@ -65,5 +65,10 @@ namespace Intelektika1
                 return skaicius;
             }
         }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            MessageBox.Show("Rolandas yra debilas");
+        }
     }
 }
