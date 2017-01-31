@@ -69,6 +69,7 @@ namespace Intelektika1
         private void Form1_Load(object sender, EventArgs e)
         {
             MessageBox.Show("Čia ne messageboxas kurio tu ieškai");
+            MessageBox.Show("WTF kas per gitas");
         }
     }
 }
