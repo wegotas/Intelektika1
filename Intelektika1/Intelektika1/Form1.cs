@@ -20,6 +20,7 @@ namespace Intelektika1
         double minKiekisUzsn;
         double MBKiekisUzsn;
         double ApytiksleKaina;
+        private List<DuomenuParuosimas.Klases.Reiksmes> OLEGUI = new List<DuomenuParuosimas.Klases.Reiksmes>();
 
         public Form1()
         {
@@ -119,8 +120,10 @@ namespace Intelektika1
         private void Form1_Load(object sender, EventArgs e)
         {
             DuomenuParuosimas.Klases.Generate Generate = new DuomenuParuosimas.Klases.Generate();
-            var Properciai = Generate.GetAllProperties(@"C:\Users\Wegis\Desktop\Planai-su-diagrama.xlsx"); //Savo patha reiks nurodyti(galima bus padaryt kad pasirenki excelio faila) 
-            var Uzpildytas = Generate.Uzpildymas(@"C:\Users\Wegis\Desktop\Planai-su-diagrama.xlsx", Properciai);
+            var Properciai = Generate.GetAllProperties(@"C:\Users\Rolandas\Desktop\Planai-su-diagrama.xlsx"); //Savo patha reiks nurodyti(galima bus padaryt kad pasirenki excelio faila) 
+            OLEGUI = Generate.Uzpildymas(@"C:\Users\Rolandas\Desktop\Planai-su-diagrama.xlsx", Properciai);
+            MessageBox.Show("Čia ne messageboxas kurio tu ieškai");
+            MessageBox.Show("WTF kas per gitas");
         }
     }
 }
