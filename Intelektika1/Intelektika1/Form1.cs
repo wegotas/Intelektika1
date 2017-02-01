@@ -31,7 +31,8 @@ namespace Intelektika1
         {
             try
             {
-                smsKiekis = viduriuoti(textBox1.Text,textBox28.Text,textBox42.Text);
+                int a = 5555;
+                smsKiekis = viduriuoti(textBox1.Text, textBox28.Text, textBox42.Text);
                 minKiekis = viduriuoti(textBox4.Text, textBox26.Text, textBox40.Text);
                 MBKiekis = viduriuoti(textBox6.Text, textBox24.Text, textBox38.Text);
                 smsKiekisUzsn = viduriuoti(textBox8.Text, textBox22.Text, textBox36.Text);
@@ -40,7 +41,7 @@ namespace Intelektika1
                 ApytiksleKaina = viduriuoti(textBox14.Text, textBox16.Text, textBox30.Text);
                 MessageBox.Show("Programos pabaiga");
             }
-            catch(Exception exc)
+            catch (Exception exc)
             {
                 MessageBox.Show(exc.Message);
             }
@@ -48,7 +49,7 @@ namespace Intelektika1
 
         private double viduriuoti(string a, string b, string c)
         {
-            int x,y,z;
+            int x, y, z;
             int.TryParse(a, out x);
             int.TryParse(b, out y);
             int.TryParse(c, out z);
@@ -82,18 +83,7 @@ namespace Intelektika1
             }
         }
         */
-        private int tikrintReiksme(TextBox textbox,string reiksme)
-        {
-            int skaicius;
-            if(!int.TryParse(reiksme,out skaicius))
-            {
-                throw new Exception("Įvestas neskaičius!");
-                textbox.Text = "0";
-            }
-            return skaicius;
-        }
-
-        private int tikrintKoeficienta(TextBox textbox,string reiksme)
+        private int tikrintReiksme(TextBox textbox, string reiksme)
         {
             int skaicius;
             if (!int.TryParse(reiksme, out skaicius))
@@ -101,12 +91,23 @@ namespace Intelektika1
                 throw new Exception("Įvestas neskaičius!");
                 textbox.Text = "0";
             }
-            if(skaicius>100)
+            return skaicius;
+        }
+
+        private int tikrintKoeficienta(TextBox textbox, string reiksme)
+        {
+            int skaicius;
+            if (!int.TryParse(reiksme, out skaicius))
+            {
+                throw new Exception("Įvestas neskaičius!");
+                textbox.Text = "0";
+            }
+            if (skaicius > 100)
             {
                 throw new Exception("Įvestas skaičius viršija 100!");
                 textbox.Text = "0";
             }
-            else if(skaicius<0)
+            else if (skaicius < 0)
             {
                 throw new Exception("Įvestas skaičius žemiau 0!");
                 textbox.Text = "0";
