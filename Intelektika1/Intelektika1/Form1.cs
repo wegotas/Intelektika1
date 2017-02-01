@@ -30,12 +30,12 @@ namespace Intelektika1
                 MessageBox.Show(exc.Message);
             }
         }
-
+        /*
         private void reiksmiuEventas(object sender, EventArgs e)
         {
             if(galimaKeistiReiksme)
             {
-                ((TextBox)sender).Text
+                ((TextBox)sender).Text = "bandymas";
                 galimaKeistiReiksme = false;
             }
             else
@@ -43,7 +43,8 @@ namespace Intelektika1
                 galimaKeistiReiksme = true;
             }
         }
-
+        */
+        /*
         private void koeficientuEventas(object sender, EventArgs e)
         {
             if (galimaKeistiReiksme)
@@ -56,7 +57,7 @@ namespace Intelektika1
                 galimaKeistiReiksme = true;
             }
         }
-
+        */
         private int tikrintReiksme(TextBox textbox,string reiksme)
         {
             int skaicius;
