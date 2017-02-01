@@ -31,10 +31,6 @@ namespace Intelektika1
         {
             try
             {
-                int a = 5555;
-                string asdasdas = "qwewqewq";
-                int b = 5;
-                int c = 5555;
                 smsKiekis = viduriuoti(textBox1.Text, textBox28.Text, textBox42.Text);
                 minKiekis = viduriuoti(textBox4.Text, textBox26.Text, textBox40.Text);
                 MBKiekis = viduriuoti(textBox6.Text, textBox24.Text, textBox38.Text);
@@ -58,34 +54,7 @@ namespace Intelektika1
             int.TryParse(c, out z);
             return (x + y + z) / 3;
         }
-        /*
-        private void reiksmiuEventas(object sender, EventArgs e)
-        {
-            if(galimaKeistiReiksme)
-            {
-                ((TextBox)sender).Text = "bandymas";
-                galimaKeistiReiksme = false;
-            }
-            else
-            {
-                galimaKeistiReiksme = true;
-            }
-        }
-        */
-        /*
-        private void koeficientuEventas(object sender, EventArgs e)
-        {
-            if (galimaKeistiReiksme)
-            {
-
-                galimaKeistiReiksme = false;
-            }
-            else
-            {
-                galimaKeistiReiksme = true;
-            }
-        }
-        */
+        
         private int tikrintReiksme(TextBox textbox, string reiksme)
         {
             int skaicius;
@@ -126,8 +95,6 @@ namespace Intelektika1
             DuomenuParuosimas.Klases.Generate Generate = new DuomenuParuosimas.Klases.Generate();
             var Properciai = Generate.GetAllProperties(@"C:\Users\Rolandas\Desktop\Planai-su-diagrama.xlsx"); //Savo patha reiks nurodyti(galima bus padaryt kad pasirenki excelio faila) 
             OLEGUI = Generate.Uzpildymas(@"C:\Users\Rolandas\Desktop\Planai-su-diagrama.xlsx", Properciai);
-            MessageBox.Show("GGGGGGG");
-            MessageBox.Show("Čia ne messageboxas kurio tu ieškai");
             MessageBox.Show("WTF kas per gitas");
         }
     }
