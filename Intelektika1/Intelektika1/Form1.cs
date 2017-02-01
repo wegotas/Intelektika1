@@ -31,7 +31,8 @@ namespace Intelektika1
         {
             try
             {
-                int a = 5555;
+                int c = 5555;
+                string asdasdas = "qwewqewq";
                 smsKiekis = viduriuoti(textBox1.Text, textBox28.Text, textBox42.Text);
                 minKiekis = viduriuoti(textBox4.Text, textBox26.Text, textBox40.Text);
                 MBKiekis = viduriuoti(textBox6.Text, textBox24.Text, textBox38.Text);
