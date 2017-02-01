@@ -10,10 +10,12 @@ namespace Intelektika1.DuomenuParuosimas.Klases
     {
         public string PropercioPavadinimas { get; set; }
         public string PropercioReiksme { get; set; }
+        public double Atstumas { get; set; }
         public PlanuProperty(string PropercioPavadinimas,string PropercioReiksme)
         {
             this.PropercioPavadinimas = PropercioPavadinimas;
             this.PropercioReiksme = PropercioReiksme;
+            Atstumas = -1111;
         }
     }
 }
