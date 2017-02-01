@@ -209,18 +209,19 @@
             this.groupBox2.Controls.Add(this.tabControl1);
             this.groupBox2.Location = new System.Drawing.Point(13, 326);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(812, 286);
+            this.groupBox2.Size = new System.Drawing.Size(812, 254);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Vartotojo dalis:";
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(103, 257);
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.25F);
+            this.button1.Location = new System.Drawing.Point(330, 50);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.Size = new System.Drawing.Size(300, 100);
             this.button1.TabIndex = 23;
-            this.button1.Text = "do some shit";
+            this.button1.Text = "Doroti duomenis";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -959,7 +960,7 @@
             // 
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabel1});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 613);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 585);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Size = new System.Drawing.Size(834, 22);
             this.statusStrip1.TabIndex = 2;
@@ -975,7 +976,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(834, 635);
+            this.ClientSize = new System.Drawing.Size(834, 607);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);

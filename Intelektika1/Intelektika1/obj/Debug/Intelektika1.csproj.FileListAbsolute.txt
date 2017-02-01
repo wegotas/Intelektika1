@@ -26,3 +26,4 @@ C:\Users\Wegis\Source\Repos\Intelektika1\Intelektika1\Intelektika1\obj\Debug\Int
 C:\Users\Wegis\Source\Repos\Intelektika1\Intelektika1\Intelektika1\obj\Debug\Intelektika1.Properties.Resources.resources
 C:\Users\Wegis\Source\Repos\Intelektika1\Intelektika1\Intelektika1\obj\Debug\Intelektika1.csproj.GenerateResource.Cache
 C:\Users\Rolandas\Source\Repos\Intelektika1\Intelektika1\Intelektika1\obj\Debug\Intelektika1.csproj.ResolveComReference.cache
+C:\Users\Wegis\Source\Repos\Intelektika1\Intelektika1\Intelektika1\obj\Debug\Intelektika1.csproj.ResolveComReference.cache

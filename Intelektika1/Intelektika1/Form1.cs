@@ -13,6 +13,13 @@ namespace Intelektika1
     public partial class Form1 : Form
     {
         bool galimaKeistiReiksme = true;
+        double smsKiekis;
+        double minKiekis;
+        double MBKiekis;
+        double smsKiekisUzsn;
+        double minKiekisUzsn;
+        double MBKiekisUzsn;
+        double ApytiksleKaina;
 
         public Form1()
         {
@@ -23,12 +30,28 @@ namespace Intelektika1
         {
             try
             {
-
+                smsKiekis = viduriuoti(textBox1.Text,textBox28.Text,textBox42.Text);
+                minKiekis = viduriuoti(textBox4.Text, textBox26.Text, textBox40.Text);
+                MBKiekis = viduriuoti(textBox6.Text, textBox24.Text, textBox38.Text);
+                smsKiekisUzsn = viduriuoti(textBox8.Text, textBox22.Text, textBox36.Text);
+                minKiekisUzsn = viduriuoti(textBox10.Text, textBox20.Text, textBox34.Text);
+                MBKiekisUzsn = viduriuoti(textBox12.Text, textBox18.Text, textBox32.Text);
+                ApytiksleKaina = viduriuoti(textBox14.Text, textBox16.Text, textBox30.Text);
+                MessageBox.Show("Programos pabaiga");
             }
             catch(Exception exc)
             {
                 MessageBox.Show(exc.Message);
             }
+        }
+
+        private double viduriuoti(string a, string b, string c)
+        {
+            int x,y,z;
+            int.TryParse(a, out x);
+            int.TryParse(b, out y);
+            int.TryParse(c, out z);
+            return (x + y + z) / 3;
         }
         /*
         private void reiksmiuEventas(object sender, EventArgs e)
@@ -96,10 +119,8 @@ namespace Intelektika1
         private void Form1_Load(object sender, EventArgs e)
         {
             DuomenuParuosimas.Klases.Generate Generate = new DuomenuParuosimas.Klases.Generate();
-            var Properciai = Generate.GetAllProperties(@"C:\Users\Rolandas\Desktop\Planai-su-diagrama.xlsx"); //Savo patha reiks nurodyti(galima bus padaryt kad pasirenki excelio faila) 
-            var Uzpildytas = Generate.Uzpildymas(@"C:\Users\Rolandas\Desktop\Planai-su-diagrama.xlsx", Properciai);
-            MessageBox.Show("Čia ne messageboxas kurio tu ieškai");
-            MessageBox.Show("WTF kas per gitas");
+            var Properciai = Generate.GetAllProperties(@"C:\Users\Wegis\Desktop\Planai-su-diagrama.xlsx"); //Savo patha reiks nurodyti(galima bus padaryt kad pasirenki excelio faila) 
+            var Uzpildytas = Generate.Uzpildymas(@"C:\Users\Wegis\Desktop\Planai-su-diagrama.xlsx", Properciai);
         }
     }
 }
