@@ -12,7 +12,7 @@ namespace Intelektika1
 {
     public partial class Form1 : Form
     {
-        bool keistiReiksme = true;
+        bool galimaKeistiReiksme = true;
 
         public Form1()
         {
@@ -30,7 +30,34 @@ namespace Intelektika1
                 MessageBox.Show(exc.Message);
             }
         }
+        /*
+        private void reiksmiuEventas(object sender, EventArgs e)
+        {
+            if(galimaKeistiReiksme)
+            {
+                ((TextBox)sender).Text = "bandymas";
+                galimaKeistiReiksme = false;
+            }
+            else
+            {
+                galimaKeistiReiksme = true;
+            }
+        }
+        */
+        /*
+        private void koeficientuEventas(object sender, EventArgs e)
+        {
+            if (galimaKeistiReiksme)
+            {
 
+                galimaKeistiReiksme = false;
+            }
+            else
+            {
+                galimaKeistiReiksme = true;
+            }
+        }
+        */
         private int tikrintReiksme(TextBox textbox,string reiksme)
         {
             int skaicius;
