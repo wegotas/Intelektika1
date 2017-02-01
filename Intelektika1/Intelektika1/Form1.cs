@@ -122,6 +122,7 @@ namespace Intelektika1
             DuomenuParuosimas.Klases.Generate Generate = new DuomenuParuosimas.Klases.Generate();
             var Properciai = Generate.GetAllProperties(@"C:\Users\Rolandas\Desktop\Planai-su-diagrama.xlsx"); //Savo patha reiks nurodyti(galima bus padaryt kad pasirenki excelio faila) 
             OLEGUI = Generate.Uzpildymas(@"C:\Users\Rolandas\Desktop\Planai-su-diagrama.xlsx", Properciai);
+            MessageBox.Show("GGGGGGG");
             MessageBox.Show("Čia ne messageboxas kurio tu ieškai");
             MessageBox.Show("WTF kas per gitas");
         }
