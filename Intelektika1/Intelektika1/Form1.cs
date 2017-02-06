@@ -55,15 +55,19 @@ namespace Intelektika1
             int.TryParse(c, out z);
             return (x + y + z) / 3;
         }
-        private int tikrintReiksme(TextBox textbox, string reiksme)
+        private void tikrintReiksme(TextBox textbox)
         {
-            int skaicius;
-            if (!int.TryParse(reiksme, out skaicius))
+            double skaicius;
+            if (!double.TryParse(textbox.Text, out skaicius))
             {
-                throw new Exception("Įvestas neskaičius!");
                 textbox.Text = "0";
+                throw new Exception("Įvestas neskaičius!");                
             }
-            return skaicius;
+            if(skaicius < 0)
+            {
+                textbox.Text = "0";
+                throw new Exception("Įvestas skaičius mažesnis už 0!");
+            }
         }
 
         private int tikrintKoeficienta(TextBox textbox, string reiksme)
@@ -161,21 +165,7 @@ namespace Intelektika1
             }
             //MessageBox.Show("WTF kas per gitas");
         }
-
-        private void reiksmiuEventas(object sender, EventArgs e)
-        {
-            if (galimaKeistiReiksme)
-            {
-                ((TextBox)sender).Text = "bandymas";
-                galimaKeistiReiksme = false;
-            }
-            else
-            {
-                galimaKeistiReiksme = true;
-            }
-        }
-
-
+        
         private void koeficientuEventas(object sender, EventArgs e)
         {
             if (galimaKeistiReiksme)
@@ -187,6 +177,29 @@ namespace Intelektika1
             {
                 galimaKeistiReiksme = true;
             }
+        }
+
+        private void reiksmiuEventas(object sender, EventArgs e)
+        {
+            //((TextBox)sender).Text = "0";
+            try
+            {
+                if (galimaKeistiReiksme && ((TextBox)sender).Text != "0")
+                {
+                    galimaKeistiReiksme = false;
+                    tikrintReiksme((TextBox)sender);
+                    //((TextBox)sender).Text = "0";
+                    //((TextBox)sender).Text = tikrintReiksme((TextBox)sender).ToString();
+                }
+                else
+                {
+                    galimaKeistiReiksme = true;
+                }
+            }
+            catch(Exception exc)
+            {
+                MessageBox.Show(exc.Message);
+            }            
         }
     }
 }
