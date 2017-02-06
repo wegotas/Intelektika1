@@ -54,7 +54,6 @@ namespace Intelektika1
             int.TryParse(c, out z);
             return (x + y + z) / 3;
         }
-        
         private int tikrintReiksme(TextBox textbox, string reiksme)
         {
             int skaicius;
@@ -96,6 +95,33 @@ namespace Intelektika1
             var Properciai = Generate.GetAllProperties(@"C:\Users\Rolandas\Desktop\Planai-su-diagrama.xlsx"); //Savo patha reiks nurodyti(galima bus padaryt kad pasirenki excelio faila) 
             OLEGUI = Generate.Uzpildymas(@"C:\Users\Rolandas\Desktop\Planai-su-diagrama.xlsx", Properciai);
             MessageBox.Show("WTF kas per gitas");
+        }
+
+        private void reiksmiuEventas(object sender, EventArgs e)
+        {
+            if (galimaKeistiReiksme)
+            {
+                ((TextBox)sender).Text = "bandymas";
+                galimaKeistiReiksme = false;
+            }
+            else
+            {
+                galimaKeistiReiksme = true;
+            }
+        }
+
+
+        private void koeficientuEventas(object sender, EventArgs e)
+        {
+            if (galimaKeistiReiksme)
+            {
+
+                galimaKeistiReiksme = false;
+            }
+            else
+            {
+                galimaKeistiReiksme = true;
+            }
         }
     }
 }
