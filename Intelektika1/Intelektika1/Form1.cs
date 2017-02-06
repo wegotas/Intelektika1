@@ -38,6 +38,7 @@ namespace Intelektika1
                 minKiekisUzsn = viduriuoti(textBox10.Text, textBox20.Text, textBox34.Text);
                 MBKiekisUzsn = viduriuoti(textBox12.Text, textBox18.Text, textBox32.Text);
                 ApytiksleKaina = viduriuoti(textBox14.Text, textBox16.Text, textBox30.Text);
+                RastiAtstumus();
                 MessageBox.Show("Programos pabaiga");
             }
             catch (Exception exc)
@@ -89,12 +90,76 @@ namespace Intelektika1
             }
         }
 
+        public void RastiAtstumus()
+        {
+            foreach (var val in OLEGUI)
+            {
+                /*double zmz = double.Parse(l[1]); // Plano sms
+                double mim = double.Parse(l[2]);// Plano min
+                double nb = double.Parse(l[3]);// Plano mb
+                double zmzu = double.Parse(l[4]);// Plano smsu
+                double mimu = double.Parse(l[5]);// Plano minu
+                double nbu = double.Parse(l[6]);// Plano mbu*/
+                var smsVisur = Convert.ToDouble( val.Properties[2].PropercioReiksme);
+                var miniLt = Convert.ToDouble(val.Properties[3].PropercioReiksme);
+                var duomenuKiekis = Convert.ToDouble(val.Properties[4].PropercioReiksme);
+                var smsUzsienis = Convert.ToDouble(val.Properties[5].PropercioReiksme);
+                var MinUzsienis = Convert.ToDouble(val.Properties[6].PropercioReiksme);
+                var mbUzsienis = Convert.ToDouble(val.Properties[7].PropercioReiksme);
+                var kaina = Convert.ToDouble(val.Properties[8].PropercioReiksme);
+                var atstumas = Math.Sqrt(
+                    Math.Pow((smsKiekis-smsUzsienis),2)+Math.Pow((minKiekis-miniLt),2)+Math.Pow(((MBKiekis - duomenuKiekis)),2)+
+                    Math.Pow((smsKiekisUzsn-smsUzsienis),2)+Math.Pow((minKiekisUzsn-MinUzsienis),2)+Math.Pow((MBKiekisUzsn-mbUzsienis),2)+
+                    Math.Pow((ApytiksleKaina-kaina),2)
+                    );
+                val.Properties[0].Atstumas = atstumas;
+                //MessageBox.Show(zmz + l[0].ToString()+ min +" "+ nb );
+                /*double atstumas = Math.Sqrt((sms - zmz) * (sms - zmz) + (min - mim) * (min - mim) +
+                    (mb - nb) * (mb - nb) + (usms - zmzu) * (usms - zmzu) +
+                    (umin - mimu) * (umin - mimu) + (umb - nbu) * (umb - nbu));*/
+                //Atstumai.Add(atstumas); // sqrt((x-x)"2+(y-y)"2)
+            }
+            OLEGUI = OLEGUI.OrderBy(x => x.Properties[0].Atstumas).ToList();
+            //OLEGUI = a;
+            dataGridView1.Rows.Clear();
+            int rowCountas = 0;
+            foreach (var val in OLEGUI)
+            {
+                dataGridView1.Rows.Add();
+                dataGridView1.Rows[rowCountas].Cells[0].Value = val.Properties[0].PropercioReiksme;
+                dataGridView1.Rows[rowCountas].Cells[1].Value = val.Properties[2].PropercioReiksme;
+                dataGridView1.Rows[rowCountas].Cells[2].Value = val.Properties[3].PropercioReiksme;
+                dataGridView1.Rows[rowCountas].Cells[3].Value = val.Properties[4].PropercioReiksme;
+                dataGridView1.Rows[rowCountas].Cells[4].Value = val.Properties[5].PropercioReiksme;
+                dataGridView1.Rows[rowCountas].Cells[5].Value = val.Properties[6].PropercioReiksme;
+                dataGridView1.Rows[rowCountas].Cells[6].Value = val.Properties[7].PropercioReiksme;
+                dataGridView1.Rows[rowCountas].Cells[7].Value = val.Properties[8].PropercioReiksme;
+                dataGridView1.Rows[rowCountas].Cells[8].Value = val.Properties[0].Atstumas;
+                rowCountas++;
+            }
+            MessageBox.Show("DONE");
+        }
         private void Form1_Load(object sender, EventArgs e)
         {
             DuomenuParuosimas.Klases.Generate Generate = new DuomenuParuosimas.Klases.Generate();
             var Properciai = Generate.GetAllProperties(@"C:\Users\Rolandas\Desktop\Planai-su-diagrama.xlsx"); //Savo patha reiks nurodyti(galima bus padaryt kad pasirenki excelio faila) 
             OLEGUI = Generate.Uzpildymas(@"C:\Users\Rolandas\Desktop\Planai-su-diagrama.xlsx", Properciai);
-            MessageBox.Show("WTF kas per gitas");
+            int rowCountas = 0;
+            foreach (var val in OLEGUI)
+            {
+                dataGridView1.Rows.Add();
+                dataGridView1.Rows[rowCountas].Cells[0].Value = val.Properties[0].PropercioReiksme;
+                dataGridView1.Rows[rowCountas].Cells[1].Value = val.Properties[2].PropercioReiksme;
+                dataGridView1.Rows[rowCountas].Cells[2].Value = val.Properties[3].PropercioReiksme;
+                dataGridView1.Rows[rowCountas].Cells[3].Value = val.Properties[4].PropercioReiksme;
+                dataGridView1.Rows[rowCountas].Cells[4].Value = val.Properties[5].PropercioReiksme;
+                dataGridView1.Rows[rowCountas].Cells[5].Value = val.Properties[6].PropercioReiksme;
+                dataGridView1.Rows[rowCountas].Cells[6].Value = val.Properties[7].PropercioReiksme;
+                dataGridView1.Rows[rowCountas].Cells[7].Value = val.Properties[8].PropercioReiksme;
+                dataGridView1.Rows[rowCountas].Cells[8].Value = val.Properties[0].Atstumas;
+                rowCountas++;
+            }
+            //MessageBox.Show("WTF kas per gitas");
         }
 
         private void reiksmiuEventas(object sender, EventArgs e)
